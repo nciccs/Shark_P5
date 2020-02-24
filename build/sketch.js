@@ -89,7 +89,11 @@ function draw()
                 sharkSprite.mirrorX(-1);
                 sharkSprite.position.x -= 10;
             }
+
+            mouseInput();
         }
+
+
 
         stayInBorder(sharkSprite);
 
@@ -111,6 +115,34 @@ function draw()
     {
         gameOver = true;
         backgroundMusic.stop();
+    }
+}
+
+function mouseInput()
+{
+    if(mouseIsPressed)
+    {
+        if(mouseY > sharkSprite.position.y)
+        {
+            sharkSprite.position.y += 10;
+        }
+
+        if(mouseY < sharkSprite.position.y)
+        {
+            sharkSprite.position.y -= 10;
+        }
+
+        if(mouseX > sharkSprite.position.x)
+        {
+            sharkSprite.mirrorX(1);
+            sharkSprite.position.x += 10;
+        }
+
+        if(mouseX < sharkSprite.position.x)
+        {
+            sharkSprite.mirrorX(-1);
+            sharkSprite.position.x -= 10;
+        }
     }
 }
 
