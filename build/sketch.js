@@ -243,3 +243,11 @@ function keyPressed()
         getAudioContext().resume();
     }
 }
+
+function mousePressed()
+{
+    if (getAudioContext().state !== 'running')
+    {
+        getAudioContext().resume();
+    }
+}
